@@ -1,3 +1,4 @@
+
 function Player(x,y) {
     this.x = x;
     this.y = y;
@@ -9,7 +10,7 @@ function Player(x,y) {
     this.framey = 0;
     this.width = 100;
     this.height = 200;
-    this.active = true;
+    this.active = false;
     this.moving = false;
     this.stamina = 122;
     this.maxhp = 3;
@@ -21,33 +22,24 @@ function Player(x,y) {
         //movement
         if(this.active){
             //Horizontal Movement
-            if(!leftKey && !rightKey || leftKey && rightKey){
-                //slow down
-                this.xspeed *= this.friction;
-            }else if(rightKey){
-                //เดินขวา
+            if(rightKey){
                 this.framey = 0;
-                //วิ่ง
+                this.xspeed = 9;
                 if(sprint && this.stamina > 0){
                     this.xspeed = 12;
                     this.stamina -= 1;
                 }
-                else{
-                    this.xspeed = 9;
-                }
             }else if(leftKey){
-                //เดินซ้าย
                 this.framey = 1;
-                //วิ่ง
+                this.xspeed = -9;
                 if(sprint && this.stamina > 0){
                     this.xspeed = -12;
                     this.stamina -= 1;
                 }
-                else{
-                    this.xspeed = -9;
-                }
-                
+            }else{
+                this.xspeed = 0;
             }
+            
 
             if(this.framey == 0 && rightKey == false){
                 this.framey = 2

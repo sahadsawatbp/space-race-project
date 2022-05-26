@@ -31,12 +31,12 @@ function huntPlayer(){
         distance = Math.abs(player.x - dog.x);
         if(dog.x > player.x){
             dog.framey = 1;
-            dog.x -= 5;
+            dog.x -= 10;
             dog.right = false;
             dog.left = true;
         }else{
             dog.framey = 0;
-            dog.x += 5;
+            dog.x += 10;
             dog.right = true;
             dog.left = false;
         }
@@ -50,7 +50,7 @@ function huntPlayer(){
             player.maxhp--;
         }
     }
-    else if(player.active == false && dog.active){ 
+    else if(player.active == false && dog.active && stage == Math.floor(stage) && stage != 0){ 
         if(dog.left){
             if(dog.x >= -200){
                 dog.x -= 5

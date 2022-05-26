@@ -23,36 +23,47 @@ body{
 
 #quest{
     position: absolute;
-    background: rgb(0,0,0,0.7);
+    background: rgb(0,0,0);
     border-radius: 10px;
-    z-index: 99;
+    z-index: 20;
     width:280px;
-    height:150px;
+    height:100px;
     right: 2vw;
     top:2vw;
     justify-content: center;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
 #quest h1{
     color:white;
     margin-left:10px;
-    font-size:20px;
+    font-size:15px;
 }
 
 #quest p{
     color:white;
-    font-size:15px;
+    font-size:13px;
 }
 
+#controll{
+    z-index: 1000000;
+    width:1280px;
+    height:720px;
+    top:0%;
+    position: absolute;
+    border-radius: 10px;
+    z-index: 4;
+    background: url('img/1.png');
+    display:grid;
+    border: black solid 5px;
+}
 
 .back {
     color:white;
     position: absolute;
-    bottom:6vw;
-    left:8vw;
-    font-size: 30px;
+    bottom:3em;
+    left:6.5em;
     cursor:pointer;
     font-family: 'Press Start 2P', cursive;
     z-index: 100;
@@ -71,9 +82,8 @@ body{
 .skip{
     color:white;
     position: absolute;
-    bottom:6vw;
-    right:8vw;
-    font-size: 30px;
+    bottom:3em;
+    right:6.5vw;
     cursor:pointer;
     font-family: 'Press Start 2P', cursive;
     z-index: 100;
